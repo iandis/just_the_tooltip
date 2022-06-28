@@ -1,3 +1,6 @@
+## [0.0.12+1] - Jun 28, 2022
+* Downgrade SDK version to 2.16.0 from 2.17.0
+
 ## [0.0.12] - Jun 14, 2022
 * fix state build when deactive and dispose, and update flutter - Credit @phamconganh.
 * lint errors and update to newest sdk.
