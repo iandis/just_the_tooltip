@@ -5,7 +5,7 @@ import 'package:just_the_tooltip/src/positioned_tooltip.dart';
 
 class AnimatedTooltip extends ImplicitlyAnimatedWidget {
   const AnimatedTooltip({
-    super.key,
+    Key? key,
     required this.child,
     required this.margin,
     required this.target,
@@ -23,10 +23,15 @@ class AnimatedTooltip extends ImplicitlyAnimatedWidget {
     required this.shadow,
     required this.elevation,
     required this.scrollPosition,
-    super.curve = Curves.linear,
-    required super.duration,
-    super.onEnd,
-  });
+    Curve curve = Curves.linear,
+    required Duration duration,
+    VoidCallback? onEnd,
+  }) : super(
+          key: key,
+          curve: curve,
+          duration: duration,
+          onEnd: onEnd,
+        );
 
   final Widget child;
 

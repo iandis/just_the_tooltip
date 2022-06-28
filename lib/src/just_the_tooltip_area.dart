@@ -17,10 +17,10 @@ class InheritedTooltipArea extends InheritedWidget {
   final JustTheTooltipAreaState data;
 
   const InheritedTooltipArea({
-    super.key,
+    Key? key,
     required this.data,
-    required super.child,
-  });
+    required Widget child,
+  }) : super(key: key, child: child);
 
   @override
   bool updateShouldNotify(covariant InheritedTooltipArea oldWidget) =>
@@ -36,7 +36,7 @@ class InheritedTooltipArea extends InheritedWidget {
 class JustTheTooltipArea extends StatefulWidget {
   final TooltipBuilder builder;
 
-  const JustTheTooltipArea({super.key, required this.builder});
+  const JustTheTooltipArea({Key? key, required this.builder}) : super(key: key);
 
   /// Used to retrieve the scope of the tooltip. This scope is responsible for
   /// managing the children `JustTheTooltip`s
