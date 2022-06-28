@@ -7,7 +7,7 @@ part of './just_the_tooltip.dart';
 /// {@macro just_the_tooltip.overlay.constructor}
 class JustTheTooltipEntry extends StatefulWidget implements JustTheInterface {
   const JustTheTooltipEntry({
-    super.key,
+    Key? key,
     required this.content,
     required this.child,
     this.onDismiss,
@@ -39,7 +39,7 @@ class JustTheTooltipEntry extends StatefulWidget implements JustTheInterface {
     this.shadow,
     this.showWhenUnlinked = false,
     this.scrollController,
-  });
+  }) : super(key: key);
 
   @override
   final JustTheController? controller;
@@ -207,7 +207,7 @@ class _JustTheTooltipEntryState extends JustTheTooltipState<Widget> {
 
   @override
   void didUpdateWidget(covariant JustTheInterface oldWidget) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
       _updateEntries();
     });
 
